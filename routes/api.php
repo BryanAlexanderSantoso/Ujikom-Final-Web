@@ -2,6 +2,11 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\ConcertController as ApiConcertController;
+use App\Http\Controllers\Api\CatTypeController as ApiCatTypeController;
+use App\Http\Controllers\Api\TicketController as ApiTicketController;
+use App\Http\Controllers\Api\PaymentController as ApiPaymentController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +19,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+Route::post('/register', [\App\Http\Controllers\Api\AuthController::class, 'register']);
+Route::post('/login', [\App\Http\Controllers\Api\AuthController::class, 'login']);
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/logout', [\App\Http\Controllers\Api\AuthController::class, 'logout']);
+});
+Route::apiResource('/concerts', ApiConcertController::class);
+use App\Http\Controllers\Api\ConcertController;
+Route::get('/concerts/{concert}', [ConcertController::class, 'show']);
+Route::apiResource('/cat_types', ApiCatTypeController::class);
+Route::apiResource('/tickets', ApiTicketController::class);
+Route::apiResource('/payments', ApiPaymentController::class);

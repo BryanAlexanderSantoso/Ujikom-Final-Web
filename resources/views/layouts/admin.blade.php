@@ -63,6 +63,35 @@
             </a>
         </li>
 
+
+        <!-- Nav Item - Profile -->
+        <li class="nav-item {{ Nav::isRoute('concert') }}">
+            <a class="nav-link" href="{{ route('concerts.index') }}">
+                <span>{{ __('Concert') }}</span>
+            </a>
+        </li>
+
+        <!-- Nav Item - Profile -->
+        <li class="nav-item {{ Nav::isRoute('cat type') }}">
+            <a class="nav-link" href="{{ route('cat_types.index') }}">
+                <span>{{ __('Cat Type') }}</span>
+            </a>
+        </li>
+
+        <!-- Nav Item - Profile -->
+        <li class="nav-item {{ Nav::isRoute('ticket') }}">
+            <a class="nav-link" href="{{ route('tickets.index') }}">
+                <span>{{ __('Ticket') }}</span>
+            </a>
+        </li>
+
+        <!-- Nav Item - Profile -->
+        <li class="nav-item {{ Nav::isRoute('payment') }}">
+            <a class="nav-link" href="{{ route('payments.index') }}">
+                <span>{{ __('Payment') }}</span>
+            </a>
+        </li>
+
         <!-- Nav Item - About -->
         <li class="nav-item {{ Nav::isRoute('about') }}">
             <a class="nav-link" href="{{ route('about') }}">
