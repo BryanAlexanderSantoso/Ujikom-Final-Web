@@ -119,7 +119,7 @@
 
     {{-- Top Image Section --}}
     <section class="relative w-full max-w-[1200px] mx-auto">
-        <img class="w-full object-cover" src="{{ asset('storage/concert_images/0TEH91LuT0xsnZeDqgPYLRIyuRDQlsV2BY74l0qx.png') }}" src="public/storage/concert_images/0TEH91LuT0xsnZeDqgPYLRIyuRDQlsV2BY74l0qx.png" alt="Fujii Kaze Tour" />
+        <img class="w-full object-cover" src="{{ asset('storage/concert_images/wxzUs6fW2LBEwiuwLctnxK3Y9mhLVGpMq8B381w4.png') }}" src="public/storage/concert_images/0TEH91LuT0xsnZeDqgPYLRIyuRDQlsV2BY74l0qx.png" alt="Fujii Kaze Tour" />
         <div aria-hidden="true" class="scroll-vertical-text hidden md:block absolute top-1/2 left-0 -translate-y-1/2">scroll</div>
         <div class="absolute top-4 right-4 flex space-x-2">
             <button class="w-7 h-7 rounded-full border border-white text-white text-xs font-light flex items-center justify-center">Jp</button>
@@ -154,36 +154,24 @@
             <table class="table-fixed-layout border border-[#d6c9b6] text-[9px] md:text-xs font-light w-full">
                 <thead>
                     <tr class="bg-[#d6c9b6] text-[#3a2617]">
+                        <th class="border py-1 px-1">Concert Name</th>
+                        <th class="border py-1 px-1">Venue</th>
                         <th class="border py-1 px-1">Date</th>
-                        <th class="border py-1 px-1">Location</th>
-                        <th class="border py-1 px-1">On-sale Date</th>
-                        <th class="border py-1 px-1">Tickets</th>
-                        <th class="border py-1 px-1">Promoter</th>
+                        <th class="border py-1 px-1">Ticket Price</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="border py-1 px-1">Oct. 26, 2024</td>
-                        <td class="border py-1 px-1">Singapore Indoor Stadium</td>
-                        <td class="border py-1 px-1">Wed, September 4</td>
-                        <td class="border py-1 px-1 text-center">
-                            <button class="btn-outline cursor-default" disabled>SOLD OUT</button>
-                        </td>
-                        <td class="border py-1 px-1">
-                            <a class="btn-link" href="#">Live Nation Singapore</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="border py-1 px-1">Dec. 14, 2024</td>
-                        <td class="border py-1 px-1">Gocheok Sky Dome(Seoul)</td>
-                        <td class="border py-1 px-1">Fri, September 20</td>
-                        <td class="border py-1 px-1 text-center">
-                            <button class="btn-outline cursor-default" disabled>SOLD OUT</button>
-                        </td>
-                        <td class="border py-1 px-1">
-                            <a class="btn-link" href="#">TAXIEL Inc.</a>
-                        </td>
-                    </tr>
+                    @foreach ($concerts as $concert)
+                        <tr>
+                            <td class="border py-1 px-1">{{ $concert->concert_name }}</td>
+                            <td class="border py-1 px-1">{{ $concert->venue }}</td>
+                            <td class="border py-1 px-1">{{ $concert->date }}</td>
+                            <td class="border py-1 px-1 flex flex-col md:flex-row md:items-center justify-between gap-2">
+                                <span>{{ $concert->ticket_price }}</span>
+                                <a href="{{ route('tickets.create', ['concert_id' => $concert->id])}}" class="btn-outline text-[8px] md:text-[10px] px-2 py-1 whitespace-nowrap">Pesan Sekarang</a>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

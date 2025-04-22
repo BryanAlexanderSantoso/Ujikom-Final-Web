@@ -26,25 +26,25 @@ class PaymentController extends Controller
     }
 
     public function store(Request $request)
-    {
-        $request->validate([
-            'ticket_id' => 'required|exists:tickets,id',
-            'payment_status' => 'required|string|max:20',
-        ]);
+{
+    $request->validate([
+        'ticket_id' => 'required|exists:tickets,id',
+    ]);
 
-        $ticket = Ticket::findOrFail($request->ticket_id);
-        $concert = $ticket->concert;
-        $amount = $concert->ticket_price * $ticket->quantity;
+    $ticket = Ticket::findOrFail($request->ticket_id);
+    $concert = $ticket->concert;
+    $amount = $concert->ticket_price * $ticket->quantity;
 
-        Payment::create([
-            'ticket_id' => $request->ticket_id,
-            'amount' => $amount,
-            'payment_date' => now(), // Menggunakan waktu saat ini sebagai tanggal pembayaran
-            'payment_status' => $request->payment_status,
-        ]);
+    Payment::create([
+        'ticket_id' => $request->ticket_id,
+        'amount' => $amount,
+        'payment_date' => now(),
+        'payment_status' => 'proses', // default status
+    ]);
 
-        return redirect()->route('payments.index')->with('success', 'Pembayaran berhasil ditambahkan.');
-    }
+    return redirect()->route('payments.index')->with('success', 'Pembayaran berhasil ditambahkan.');
+}
+
 
     public function show(Payment $payment)
     {

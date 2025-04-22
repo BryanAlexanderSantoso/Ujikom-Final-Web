@@ -24,10 +24,10 @@
                 @endforeach
             </select>
         </div>
-        <div class="mb-3">
-            <label for="payment_status" class="form-label">Status Pembayaran</label>
-            <input type="text" class="form-control" id="payment_status" name="payment_status" required>
-        </div>
+
+        {{-- payment_status sudah otomatis 'proses', jadi tidak perlu input manual --}}
+
         <button type="submit" class="btn btn-primary">Simpan</button>
     </form>
+
 @endsection

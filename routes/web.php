@@ -8,6 +8,8 @@ use App\Http\Controllers\TicketController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\IndexUserController;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +22,12 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', function () {
-    return view('index-user');
-});
+
+
+Route::get('/', [IndexUserController::class, 'index']);
+Route::get('/book', [BookController::class, 'index'])->name('book.index');
+Route::post('/book', [BookController::class, 'store'])->name('book.store');
+
 
 Auth::routes();
 
