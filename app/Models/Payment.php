@@ -15,6 +15,7 @@ class Payment extends Model
         'amount',
         'payment_date',
         'payment_status',
+        'payment_code',
     ];
 
     public function ticket(): BelongsTo

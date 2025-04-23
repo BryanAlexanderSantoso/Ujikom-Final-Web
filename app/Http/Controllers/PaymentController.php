@@ -6,6 +6,7 @@ use App\Models\Payment;
 use Illuminate\Http\Request;
 use App\Models\Ticket;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 
 class PaymentController extends Controller
 {
@@ -26,24 +27,25 @@ class PaymentController extends Controller
     }
 
     public function store(Request $request)
-{
-    $request->validate([
-        'ticket_id' => 'required|exists:tickets,id',
-    ]);
+    {
+        $request->validate([
+            'ticket_id' => 'required|exists:tickets,id',
+        ]);
 
-    $ticket = Ticket::findOrFail($request->ticket_id);
-    $concert = $ticket->concert;
-    $amount = $concert->ticket_price * $ticket->quantity;
+        $ticket = Ticket::findOrFail($request->ticket_id);
+        $concert = $ticket->concert;
+        $amount = $concert->ticket_price * $ticket->quantity;
 
-    Payment::create([
-        'ticket_id' => $request->ticket_id,
-        'amount' => $amount,
-        'payment_date' => now(),
-        'payment_status' => 'proses', // default status
-    ]);
+        $payment = new Payment();
+        $payment->ticket_id = $request->ticket_id;
+        $payment->amount = $amount;
+        $payment->payment_date = now();
+        $payment->payment_status = 'proses';
+        $payment->payment_code = 'PAY-' . now()->format('Ymd') . '-' . strtoupper(Str::random(6));
+        $payment->save();
 
-    return redirect()->route('payments.index')->with('success', 'Pembayaran berhasil ditambahkan.');
-}
+        return redirect()->route('payments.index')->with('success', 'Pembayaran berhasil ditambahkan.');
+    }
 
 
     public function show(Payment $payment)

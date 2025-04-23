@@ -17,6 +17,7 @@
                 <th>Jumlah</th>
                 <th>Tanggal Pembayaran</th>
                 <th>Status Pembayaran</th>
+                <th>Kode Tiket</th>
                 <th>Aksi</th>
             </tr>
         </thead>
@@ -28,6 +29,7 @@
                     <td>Rp {{ $payment->amount }}</td>
                     <td>{{ $payment->payment_date }}</td>
                     <td>{{ $payment->payment_status }}</td>
+                    <td>{{ $payment->payment_code }}</td>
                     <td>
                         <a href="{{ route('payments.show', $payment->id) }}" class="btn btn-info btn-sm">Lihat</a>
                         <a href="{{ route('payments.edit', $payment->id) }}" class="btn btn-warning btn-sm">Edit</a>

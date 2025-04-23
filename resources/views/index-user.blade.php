@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>Fujii Kaze Asia Tour</title>
+    <title>Tixid.id</title>
 
     {{-- Tailwind CSS --}}
     <script src="https://cdn.tailwindcss.com"></script>
@@ -131,17 +131,17 @@
     <section class="max-w-[1200px] mx-auto px-4 mt-10 md:mt-16">
         <div class="flex flex-col md:flex-row md:items-center md:space-x-6">
             <div class="w-full md:w-1/5">
-                <p class="underline-custom text-sm md:text-base font-light cursor-default">Artists</p>
+
             </div>
             <div class="w-full md:w-4/5 border-b border-dotted border-[#d6c9b6] pb-2 md:pb-0">
-                <p class="text-xs md:text-sm font-light mb-1">Fujii Kaze</p>
+                <p class="text-xs md:text-sm font-light mb-1">Tixid.id</p>
                 <p class="text-xs md:text-sm font-light mb-1">
-                    [Band members] <br/>
-                    Gt. TAIKING(Suchmos) / Ba. Naoki Kobayashi / Dr. Norihide Saji / Key. Yaffle
+
+
                 </p>
                 <p class="text-xs md:text-sm font-light">
-                    [Dancers] <br/>
-                    SHINGO OKAMOTO / KOU / Raphael / Vinih Malukin
+                    [Tixid.id hanya tersedia di tenant offline!] <br/>
+                    Book Ur Ticket Now On Sale!
                 </p>
             </div>
         </div>
@@ -149,7 +149,7 @@
 
     {{-- Information Section --}}
     <section class="max-w-[1200px] mx-auto px-4 mt-10 md:mt-16">
-        <p class="underline-custom text-sm md:text-base font-light mb-4 cursor-default">Information</p>
+        <p class="underline-custom text-sm md:text-base font-light mb-4 cursor-default">Informasi Konser Tersedia</p>
         <div class="overflow-x-auto">
             <table class="table-fixed-layout border border-[#d6c9b6] text-[9px] md:text-xs font-light w-full">
                 <thead>
@@ -167,7 +167,7 @@
                             <td class="border py-1 px-1">{{ $concert->venue }}</td>
                             <td class="border py-1 px-1">{{ $concert->date }}</td>
                             <td class="border py-1 px-1 flex flex-col md:flex-row md:items-center justify-between gap-2">
-                                <span>{{ $concert->ticket_price }}</span>
+                                <span>Rp {{ $concert->ticket_price }}</span>
                                 <a href="{{ route('tickets.create', ['concert_id' => $concert->id])}}" class="btn-outline text-[8px] md:text-[10px] px-2 py-1 whitespace-nowrap">Pesan Sekarang</a>
                             </td>
                         </tr>
@@ -186,94 +186,17 @@
 
     {{-- Description Text --}}
     <section class="max-w-[1200px] mx-auto px-4 mt-10 md:mt-16 text-center text-[9px] md:text-xs font-light leading-tight">
-        <p class="mb-2">The playlist "Best of Fujii Kaze 2020-2024" will be released on vinyl.</p>
-        <p class="mb-2">Limited pre-sale will be available at the following Asia tour shows.</p>
-        <p class="mb-2 text-[7px] md:text-[9px] opacity-50">*After the tour, vinyl will be sold in Japan and other countries too.</p>
+        <p class="mb-2">Tixid.id yang asli hanya tersedia di tenant offline!</p>
+        <p class="mb-2">Waspada terhadap penipuan, Tixid tidak pernah menyediakan tiket 1 hari sebelum konser!</p>
+        <p class="mb-2 text-[7px] md:text-[9px] opacity-50">*Waspada Tixid.id tidak pernah menghubungi secara langsung!</p>
     </section>
 
-    {{-- Album Info --}}
-    <section class="max-w-[1200px] mx-auto px-4 mt-10 md:mt-16 text-center">
-        <img class="mx-auto mb-6" src="https://storage.googleapis.com/a1aa/image/44dec0c1-731c-4e60-e681-d8e2c00ebc18.jpg" alt="Album cover" width="120" />
-        <p class="playfair text-[10px] md:text-sm font-light mb-1">Best of <span class="font-bold">Fujii Kaze</span> 2020-2024</p>
-        <p class="text-[7px] md:text-[9px] font-light mb-6">Format: Vinyl / Discs: 1 / Catalogue: JMHX-9151</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[900px] mx-auto text-[7px] md:text-[9px] font-light text-left">
-            <div>
-                <p class="mb-1 underline-custom">[Track List]</p>
-                <div class="flex justify-between">
-                    <ul>
-                        <li>Side A</li>
-                        <li>01. Natsun</li>
-                        <li>02. Warikon' Hard</li>
-                        <li>03. Nan-Nan</li>
-                        <li>04. Kirari</li>
-                        <li>05. Hana (flower)</li>
-                    </ul>
-                    <ul>
-                        <li>Side B</li>
-                        <li>01. Garden</li>
-                        <li>02. cam</li>
-                        <li>03. Shinunoga E-Wa</li>
-                        <li>04. Tabiji</li>
-                        <li>05. Michi Teyu Ku (Overflowing)</li>
-                    </ul>
-                </div>
-            </div>
-            <div>
-                <p class="mb-1 underline-custom">[Limited pre-sale available shows]</p>
-                <ul>
-                    <li>10/26 Singapore Indoor Stadium</li>
-                    <li>11/05 Impact Arena (Bangkok)</li>
-                    <li>11/10 Impact Arena (Bangkok)</li>
-                    <li>11/15 Taipei Arena</li>
-                    <li>11/17 Taipei Arena</li>
-                    <li>12/04 AsiaWorld-Arena (Hong Kong)</li>
-                    <li>12/05 AsiaWorld-Arena (Hong Kong)</li>
-                    <li>12/14 Gocheok Sky Dome (Seoul)</li>
-                </ul>
-            </div>
-        </div>
-    </section>
 
-    {{-- Playlist Section --}}
-    <section class="max-w-[1200px] mx-auto mt-16 bg-[#d6c9b6] text-[#3a2617] px-4 py-8 md:py-12 flex flex-col md:flex-row items-center justify-between gap-6">
-        <p class="text-sm md:text-base font-light underline-custom">Playlist</p>
-        <img class="w-24 h-24 object-cover" src="https://storage.googleapis.com/a1aa/image/4d09a62d-ed13-4e98-885e-65186128a76b.jpg" alt="Playlist" />
-        <div class="text-center md:text-left max-w-md">
-            <p class="playfair text-lg md:text-xl font-light mb-4">Best of <span class="font-bold">Fujii Kaze</span> 2020-2024</p>
-            <button class="btn-outline inline-block">Listen and stream here <i class="fas fa-arrow-right ml-2"></i></button>
-        </div>
-    </section>
 
-    {{-- Download Section --}}
-    <section class="max-w-[1200px] mx-auto mt-16 px-4">
-        <div class="bg-[#3a2617] text-[#d6c9b6] py-8 flex flex-col md:flex-row items-center justify-between gap-6">
-            <p class="underline-custom text-sm md:text-base font-light ml-4 md:ml-8">Download</p>
-            <div class="flex flex-col md:flex-row items-center gap-6">
-                <div class="text-center md:text-left">
-                    <p class="text-xs md:text-sm font-light mb-2">OFFICIAL APP</p>
-                    <div class="flex space-x-4 justify-center md:justify-start">
-                        <a href="#"><img src="https://storage.googleapis.com/a1aa/image/7945b482-0d14-480f-1643-ec672d01cb09.jpg" alt="App Store" width="120" /></a>
-                        <a href="#"><img src="https://storage.googleapis.com/a1aa/image/ffd4ba45-122c-4c9f-3a5a-5b28708ad2fa.jpg" alt="Google Play" width="120" /></a>
-                    </div>
-                </div>
-                <img src="https://storage.googleapis.com/a1aa/image/4242305d-5766-41d9-81ec-3802e96bdf41.jpg" class="w-24 h-24 object-cover" alt="Fujii Kaze Portrait" />
-            </div>
-        </div>
-    </section>
-
-    {{-- Social Section --}}
-    <section class="max-w-[1200px] mx-auto mt-8 px-4">
-        <div class="flex justify-center space-x-6 text-[#3a2617] text-xs">
-            @foreach(['facebook-f', 'twitter', 'instagram', 'youtube', 'spotify', 'line', 'tiktok'] as $icon)
-                <a href="#" class="hover:text-[#d6c9b6]"><i class="fab fa-{{ $icon }}"></i></a>
-            @endforeach
-        </div>
-    </section>
 
     {{-- Footer --}}
     <footer class="max-w-[1200px] mx-auto mt-4 mb-8 px-4 text-center text-[#d6c9b6] text-[7px] font-light">
-        <p class="playfair">BESTI</p>
-        <p>© Fujii Kaze All rights reserved.</p>
+        <p>© 2025 PT.Tixid Solusi Indonesia All rights reserved.</p>
     </footer>
 </body>
 </html>
